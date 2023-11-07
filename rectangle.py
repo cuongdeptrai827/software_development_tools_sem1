@@ -1,8 +1,34 @@
+import unittest
 def area(a, b):
-    ''' Numbers a and b are two sides of the rectangle.
-Return the result as the area of a rectangle with two sides a and b. '''
-return a * b
+    """Получает на вход боковую сторону a и основание прямоугольника b, возвращает его площадь"""
+    return a * b
+
 def perimeter(a, b):
-'''Numbers a and b are two sides of the rectangle.
-Returning the result is the perimeter of the rectangle with 2 sides a and b. '''
-return 2(a + b)
+    """Получает на вход боковую сторону a и основание прямоугольника b, возвращает его периметр"""
+    return 2*(a + b)
+
+
+class RectangleTestCase(unittest.TestCase):
+    def test_zero_mul(self):
+        res = area(0, 13)
+        self.assertEqual(res, 0)
+
+    def test_one_mul(self):
+        res = area(10, 13)
+        self.assertEqual(res, 130)
+
+    def test_two_mul(self):
+        res = area(67.5, 3.5)
+        self.assertEqual(res, 236.25)
+
+    def test_three_mul(self):
+        res = perimeter(0, 0)
+        self.assertEqual(res, 0)
+
+    def test_four_mul(self):
+        res = perimeter(10, 54)
+        self.assertEqual(res, 128)
+
+    def test_five_mul(self):
+        res = perimeter(67.636, 42.364)
+        self.assertEqual(res, 220)

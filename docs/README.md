@@ -27,7 +27,7 @@ return math.pi *r *r
 
   Number r is  the radius of the circle
 
-  Return the value of square of the circle with formula S = pi * r^2 
+  Return the value of square of the circle with formula _S = pi * r^2_ 
 
   _Example:_
 
@@ -43,7 +43,7 @@ return 2 * math.pi * r
 
   Number r is the radius of the circle
 
-  return the value of perimeter of the circle with formula S = pi * 2r
+  return the value of perimeter of the circle with formula _S = pi * 2r_
 
   _Example :_ 
 
