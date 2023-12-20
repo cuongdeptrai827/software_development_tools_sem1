@@ -1,11 +1,19 @@
 import unittest
-import triangle
-import square
-import rectangle
-import circle
+from triangle import area_triangle
+from triangle import perimeter_triangle
+from circle import circle.area_circle
+from circle import circle.perimeter_circle
+from square import area_square
+from square import perimeter_square
+from rectangle import area_rectangle
+from rectangle import perimeter_rectangle
 
+        
 class TriangleTestCase(unittest.TestCase):
-
+    def test_mul(self):
+        result = area_triangle(7, 8)
+        self.assertEqual(result, 28)
+        
     def test_zero_mul(self):
         assert triangle.area_triangle(7,8) == 28
 
