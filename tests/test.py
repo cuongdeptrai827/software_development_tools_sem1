@@ -92,3 +92,7 @@ class CircleTestCase(unittest.TestCase):
 
     def test_five_mul(self):
         assert circle.perimeter_circle(67.636) == 424.96952143639845
+
+
+if __name__ == '__main__':
+    unittest.main()
