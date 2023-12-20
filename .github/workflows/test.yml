@@ -18,18 +18,24 @@ jobs:
       - name: Check out Repository
         uses: actions/checkout@v4
 
-      - name: Set up Python Environment
-        run: |
-          if ($env:matrix_os -eq 'ubuntu-latest') {
-            echo "pythonLocation=/opt/hostedtoolcache/Python/3.8.18/x64" >> $GITHUB_ENV
-            echo "/opt/hostedtoolcache/Python/3.8.18/x64/bin" >> $GITHUB_PATH
-          } elseif ($env:matrix_os -eq 'windows-latest') {
-            $env:pythonLocation = 'C:\hostedtoolcache\windows\Python\3.8.18\x64'
-            $env:Path += ';C:\hostedtoolcache\windows\Python\3.8.18\x64\Scripts'
-          } else {
-            echo "Unknown operating system"
-            exit 1
-          }
+      # - name: Set up Python Environment
+      #   run: |
+      #     if ($env:matrix_os -eq 'ubuntu-latest') {
+      #       echo "pythonLocation=/opt/hostedtoolcache/Python/3.8.18/x64" >> $GITHUB_ENV
+      #       echo "/opt/hostedtoolcache/Python/3.8.18/x64/bin" >> $GITHUB_PATH
+      #     } elseif ($env:matrix_os -eq 'windows-latest') {
+      #       $env:pythonLocation = 'C:\hostedtoolcache\windows\Python\3.8.18\x64'
+      #       $env:Path += ';C:\hostedtoolcache\windows\Python\3.8.18\x64\Scripts'
+      #     } else {
+      #       echo "Unknown operating system"
+      #       exit 1
+      #     }
+
+      - name: setup-python ${{ matrix.python }}
+        id: setup-python
+        uses: ./
+        with:
+          python-version: ${{ matrix.python }}
 
       
       - name: Set up Python Environment
