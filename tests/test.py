@@ -29,7 +29,7 @@ class TriangleTestCase(unittest.TestCase):
 
 
     def test_five_mul(self):
-        assert triangle.perimeter_triangle(34.23, 42.34, 23.43) == 100
+        assert triangle.perimeter_triangle(34.23, 42.34, 23.43) == 50
 
 
 class SquareTestCase(unittest.TestCase):
