@@ -10,21 +10,16 @@ from rectangle import perimeter_rectangle
 
         
 class TriangleTestCase(unittest.TestCase):
-    def test_mul(self):
+    def test_0_mul(self):
         result = area_triangle(7, 8)
         self.assertEqual(result, 28)
-        
-    def test_zero_mul(self):
-        assert triangle.area_triangle(7,8) == 28
-
-    def test_one_mul(self):
-        assert triangle.area_triangle(10, 5) == 25
-
-
-    def test_two_mul(self):
-        assert triangle.area_triangle(7.5, 3.5) == 13.125
-
-
+    def test_1_mul(self):
+        result = area_triangle(10, 5)
+        self.assertEqual(result, 25)
+    def test_2_mul(self):
+        result = area_triangle(7.5, 3.5)
+        self.assertEqual(result, 13.125)        
+            
     def test_three_mul(self):
         assert triangle.perimeter_triangle(0, 0,0) == 0
 
